@@ -1,0 +1,21 @@
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> list = new ArrayList<>(numRows);
+        int ans = 1;
+        for(int i = 1;i <= numRows; i++){
+            list.add(new ArrayList());
+            for(int j = 1; j <= i; j++){
+                if(j == 1 || j == i){
+                    ans = 1;
+                    list.get(i-1).add(ans);
+                }
+                else{
+                    ans = ans * (i-j+1)/(j-1);
+                    list.get(i-1).add(ans);
+                }
+                
+            }
+        }
+        return list;
+    }
+}
