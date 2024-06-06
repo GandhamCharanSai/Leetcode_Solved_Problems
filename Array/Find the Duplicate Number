@@ -1,0 +1,16 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int res = 0;
+       Set<Integer> nondup = new HashSet<>();
+       for(int i = 0; i < nums.length; i++){
+            if(!nondup.contains(nums[i])){
+                nondup.add(nums[i]);
+            }
+            else{
+                res = nums[i];
+                break;
+            }
+       } 
+       return res;
+    }
+}
